@@ -76,6 +76,9 @@
 					<li>Yep, the root path is wrong. Now we're getting 403 Forbidden. That's an improvement right?</li>
 					<li>More permissions errors. <code>chmod 755</code> all the things!</li>
 					</ul>
+					<p>So eventually the files were being served correctly, and then the real problems started. The deobfuscated code complained about missing classes, but then failed to run anyway when that was sorted out. The console did have some interesting things to suggest that the issue was related to synchronous XHR requests, which have been apparently nixed by the standards bodies. However, the live code didn't throw such errors, so it seems to have been better maintained. So we copy the js files from the site and see what happens. Hmm, bunch of requests for .bin files living on the server (that I obviously don't have). Copy+paste the 404'd requests from Firefox's console, paste resulting URLs into a text file. Then write a loop to wget those (since they're obviously available from the server). Green blinking cursor: can has! Nothing else though. But then randomly it started working to some degree. The final result:</p>
+					<img class="col-md-6 offset-md-2" src="img/Screenshot_2017-03-17_13-13-45.png" alt="boot failure">
+					<p>Yup. That's a <span class="bg-danger">kernel panic</span>. Something with the kernel image must not be functioning correctly, but debugging kernel panics is not something I can get done in a day. So this is where we are at the moment. I'll probably keep working on this, but for now it's time to turn this in. Until next time!</p>
 				</div>
 			</div>
 		</div>
