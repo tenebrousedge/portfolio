@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "authors": [
+    "Patrick Leahy <tenebrousedge@gmail.com>"
+  ],
+  "description": "This is a simple portfolio website for an Intro to Programming course at Epicodus",
+  "main": "index.html",
+  "keywords": [
+    "boring"
+  ],
+  "license": "All rights reserved",
+  "homepage": "https://tenebrousedge.github.io/portfolio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
