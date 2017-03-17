@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 		<header>
 			<h1>Life of Kai</h1>
-			<h5>- or -</h5>
+			<h5>~ or ~</h5>
 			<h2>Something Simple to Meet Requirements Because I Spent the Morning Making Linux Boot In My Browser</h2>
 		</header>
 		<div class="row main">
@@ -23,7 +23,8 @@
 					<h3>My Life</h3>
 				</div>
 				<div class="panel-body">
-					<p>I could start talking about my life but it's kind of a long story with a fair amount of madness in it. It's one of these things that needs a long explanation of none.</p>
+					<p>I could start talking about my life but it's kind of a long story with a fair amount of madness in it. It's one of these things that needs a long explanation.</p>
+					<p>The short form is that I'm from rural Alaska and have spent most of my life either there or in some third world country. I grew up glued to an Internet connection trying to understand the world I was in. I also grew up with some pretty serious issues with depression for reasons. The last ten years have been spent becoming more or less functional. Generally it seems like I'm playing life on hard mode.</p>
 				</div>
 			</div>
 			<div class="col-md-6 panel panel-default">
@@ -41,22 +42,40 @@
 						</p>
 				</div>
 			</div>
-			<div class="col-md-6 panel panel-default">
+			<div class="col-md-6 offset-md-2 panel panel-default">
 				<div class="panel-heading">
-					<h3>Background</h3>
+					<h3>Coding Background</h3>
 				</div>
 				<div class="panel-body">
 					<p>One day I decided I wanted to live somewhere warm, so I flew to a foreign country where I didn't speak the language. I really wanted to stay so I talked my way into a programming job with no experience. Since them I've been working freelance, mostly on horrible legacy projects for which every new feature or fixed bug is a Pyrrhic victory that prolongs the life of something that needs to be replaced entirely.</p>
 				</div>
 			</div>
 		</div>
-		<div class="row panel panel-default">
+		<div class="row panel panel-primary">
 				<div class="panel-heading">
 					<h3>What I spent My Morning On</h3>
 				</div>
 				<div class="panel-body">
-					<p>So I've been aware of Fabrice Bellard's jslinux project since it was released, and figured that it could be a nice drop-in library that would snazz up a webpage. The general idea was to have a demo of a computer desk where one could turn on the computer and watch in amazement as it actually booted up. This did not work out.</p>
+					<p>So I've been aware of <a href="http://www.bellard.org/jslinux/">Fabrice Bellard's jslinux project</a> since it was released, and figured that it could be a nice drop-in library that would snazz up a webpage. The general idea was to have a demo of a computer desk where one could turn on the computer and watch in amazement as it actually booted up. This did not work out.</p>
 					<h4>The Plan</h4>
+					<ol>
+					<li>Get Linux to boot</li>
+					<li>Make it look pretty</li>
+					</ol>
+					<h4>What <em>actually</em> happened</h4>
+					<p>So the first thing was to create the basic page structure per normal, but then I had installed npm the other day, so I figured I would figure out what this bower thing was all about. It installed just fine, but Ubuntu has a <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=614907">package name conflict with node.</a> So after resolving that, it was time for: <pre>bower install bootstrap</pre>. Okay, good so far.</p>
+					<p>The problem is that while Bellard has allowed noncommercial use of his code, there doesn't seem to be a central repository for that, and apparently the code is arcane to the point of obfuscation. So the good news is that there's a de-obfuscated library on GitHub, but it doesn't seem to have been updated all that recently. But it did have a helpful hint that the code needed to be served from a web browser in order for the XHR requests to work out right. <strong>To the nginx config, Batman!</strong></p>
+					<h4>A Litany of Failure</h4>
+					<ul>
+					<li>configuration copied and adjusted from another local site</li>
+					<li>new /etc/hosts entry (I haven't sorted out dnsmasq yet)</li>
+					<li>Fire up the web browser, and...oh. The default apache page. Hmm.</li>
+					<li>Okay, well I guess it can't find the files? Back to the nginx config 😕</li>
+					<li>Okay, this still isn't working. Why do I even have apache on here anyway? Let's get rid of that.</li>
+					<li>The default apache page again?! Okay, now you're just taunting me. Hmm. Well there probably really is something wrong with the config.</li>
+					<li>Yep, the root path is wrong. Now we're getting 403 Forbidden. That's an improvement right?</li>
+					<li>More permissions errors. <code>chmod 755</code> all the things!</li>
+					</ul>
 				</div>
 			</div>
 		</div>

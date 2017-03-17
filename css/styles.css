@@ -10,6 +10,7 @@ header {
 
 div.panel {
 	padding: 10px;
+	min-height:400px;
 }
 
 header h2 {
@@ -23,11 +24,11 @@ header h1 {
 body {
 	font-family: 'Lato', sans-serif;
 	background-image: url('../img/compukai.png');
-	background-size: cover;
-	background-position: center;
+	background-size: 100vw;
 }
 
-.container-fluid div, header {
-	opacity: .97;
+.panel-default, header {
+	opacity: .96;
+	background-image: none;
 }
 
