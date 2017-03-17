@@ -1,18 +1,58 @@
 </!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Portfolio Website</title>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="container">
-		<header><h2>Something Simple to Meet Requirements Because I Spent the Morning Making Linux Boot In My Browser</h2></header>
-		<div class="row">
-			<h3>My Life</h3>
-			<p>I could start talking about my life but it's kind of a long story with a fair amount of madness in it. It's one of these things that needs a long explanation of none.</p>
+	<div class="container-fluid">
+		<header>
+			<h1>Life of Kai</h1>
+			<h5>- or -</h5>
+			<h2>Something Simple to Meet Requirements Because I Spent the Morning Making Linux Boot In My Browser</h2>
+		</header>
+		<div class="row main">
+			<div id="life" class="col-sm-6 panel panel-default">
+				<div class="panel-heading">
+					<h3>My Life</h3>
+				</div>
+				<div class="panel-body">
+					<p>I could start talking about my life but it's kind of a long story with a fair amount of madness in it. It's one of these things that needs a long explanation of none.</p>
+				</div>
+			</div>
+			<div class="col-sm-6 panel panel-default">
+				<div class="panel-heading">
+					<h3>Projects</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li><a href="https://github.com/tenebrousedge/computerroom"></a>Computer Project</li>
+						<li>Some other terrible PHP projects</li>
+						<li><a href="http://www.levelthecomic.com/">My friend's webcomic (I did the coding)</a><li>
+						</ul>
+				</div>
+			</div>
+			<div class="col-sm-6 panel panel-default">
+				<div class="panel-heading">
+					<h3>Background</h3>
+				</div>
+				<div class="panel-body">
+					<p>One day I decided I wanted to live somewhere warm, so I flew to a foreign country where I didn't speak the language. I really wanted to stay so I talked my way into a programming job with no experience. Since them I've been working freelance, mostly on horrible legacy projects for which every new feature or fixed bug is a Pyrrhic victory that prolongs the life of something that needs to be replaced entirely.</p>
+				</div>
+			</div>
+			<div class="col-sm-6 panel panel-default">
+				<div class="panel-heading">
+					<h3>What I spent My Morning On</h3>
+				</div>
+				<div class="panel-body">
+					<p>So I've been aware of Fabrice Bellard's jslinux project since it was released, and figured that it could be a nice drop-in library that would snazz up a webpage. The general idea was to have a demo of a computer desk where one could turn on the computer and watch in amazement as it actually booted up. This did not work out.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
